@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         fontSize: 12,
         color: '#1f0a4d',
-        ...typography.bold,
+        ...typography.semiBold,
     },
     cashbackImage: {
         marginLeft: 7,

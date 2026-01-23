@@ -1,5 +1,6 @@
 import { typography } from "@/constants/typography";
 import { calculateDiscountPercentage } from "@/utils/ProductListingUtils";
+import { Image } from "expo-image";
 import { StyleSheet, Text, View } from "react-native";
 
 interface ProductListingPriceBoxProperties {
@@ -30,9 +31,15 @@ export default function ProductListingPriceBox(properties: ProductListingPriceBo
                     </>
                 )}
             </View>
-            <Text style={styles.priceLineText}>
-                €{properties.discountedPrice ?  properties.discountedPrice : properties.price}
-            </Text>
+            <View style={styles.priceLineContainer}>
+                <Text style={styles.priceLineText}>
+                    €{properties.discountedPrice ?  properties.discountedPrice : properties.price}
+                </Text>
+                <Image 
+                    source={require('../../assets/images/info.svg')}
+                    style={styles.informationImage}
+                />
+            </View>
             <Text style={styles.cashbackLineText}>
                 Cashback: €{properties.cashback}
             </Text>
@@ -61,10 +68,19 @@ const styles = StyleSheet.create({
         color: '#84e916',
         ...typography.semiBold,
     },
-    priceLineText: {
+    priceLineContainer: {
+        flexDirection: 'row',
+        alignContent: 'center',
         marginTop: 5,
+        gap: 8
+    },
+    priceLineText: {
         fontSize: 23,
         color: '#fff',
         ...typography.semiBold,
+    },
+    informationImage: {
+        width: 20,
+        height: 20,
     }
 })
