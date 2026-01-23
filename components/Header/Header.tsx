@@ -25,19 +25,14 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
     width: 1200,
     height: 57,
+    marginVertical: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
     backgroundColor: '#4518ac',
     paddingHorizontal: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
   },
 });
