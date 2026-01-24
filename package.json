@@ -5,6 +5,7 @@
   "scripts": {
     "start": "npx serve dist -s -n -L -p $PORT",
     "build": "expo export -p web",
+    "heroku-postbuild": "expo export -p web",
     "dev": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
