@@ -10,6 +10,7 @@ interface SearchContextType {
   inputValue: string;
   setInputValue: (value: string) => void;
   searchQuery: string;
+  setSearchQuery: (value: string) => void;
   onSearchSubmit: () => void;
 }
 
@@ -17,6 +18,7 @@ export const SearchContext = createContext<SearchContextType>({
   inputValue: '',
   setInputValue: () => {},
   searchQuery: '',
+  setSearchQuery: () => {},
   onSearchSubmit: () => {},
 });
 
@@ -45,7 +47,7 @@ export default function RootLayout() {
   }
 
   return (
-    <SearchContext.Provider value={{ inputValue, setInputValue, searchQuery, onSearchSubmit: handleSearchSubmit }}>
+    <SearchContext.Provider value={{ inputValue, setInputValue, searchQuery, setSearchQuery, onSearchSubmit: handleSearchSubmit }}>
       <View style={styles.container}>
         <Stack screenOptions={{ headerShown: false }} />
       </View>

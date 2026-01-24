@@ -1,16 +1,24 @@
 import { Image } from 'expo-image';
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useContext } from 'react';
+import { Pressable, StyleSheet } from 'react-native';
+import { SearchContext } from '../../app/_layout';
 
 export default function Logo() {
+  const { setInputValue, setSearchQuery } = useContext(SearchContext);
+
+  const handleLogoPress = () => {
+    setInputValue('');
+    setSearchQuery('');
+  };
+
   return (
-    <View style={styles.container}>
+    <Pressable style={styles.container} onPress={handleLogoPress}>
       <Image 
         source={require('../../assets/images/eneba-logo.svg')}
         style={styles.logo}
         contentFit="contain"
       />
-    </View>
+    </Pressable>
   );
 }
 
