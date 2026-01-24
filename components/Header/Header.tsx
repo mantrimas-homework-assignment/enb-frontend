@@ -25,14 +25,12 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    width: 1200,
+    width: 1250,
     height: 57,
     marginVertical: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'center',
     backgroundColor: '#4518ac',
-    paddingHorizontal: 20,
+    paddingHorizontal: 25,
   },
 });

@@ -1,5 +1,5 @@
 import { typography } from "@/constants/typography";
-import { calculateDiscountPercentage } from "@/utils/ProductListingUtils";
+import { calculateDiscountPercentage, formatPriceFromCents } from "@/utils/ProductListingUtils";
 import { Image } from "expo-image";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -23,7 +23,7 @@ export default function ProductListingPriceBox(properties: ProductListingPriceBo
                 {discountPercentage && (
                     <>
                         <Text style={[styles.discountLineText, styles.discountLinePriceText]}>
-                            €{properties.price}
+                            €{formatPriceFromCents(properties.price)}
                         </Text>
                         <Text style={[styles.discountLineText, styles.discountLineDiscountNumberText]}>
                             {" "}-{discountPercentage}%
@@ -33,7 +33,7 @@ export default function ProductListingPriceBox(properties: ProductListingPriceBo
             </View>
             <View style={styles.priceLineContainer}>
                 <Text style={styles.priceLineText}>
-                    €{properties.discountedPrice ?  properties.discountedPrice : properties.price}
+                    €{properties.discountedPrice ? formatPriceFromCents(properties.discountedPrice) : formatPriceFromCents(properties.price)}
                 </Text>
                 <Image 
                     source={require('../../assets/images/info.svg')}
@@ -41,7 +41,7 @@ export default function ProductListingPriceBox(properties: ProductListingPriceBo
                 />
             </View>
             <Text style={styles.cashbackLineText}>
-                Cashback: €{properties.cashback}
+                Cashback: €{formatPriceFromCents(properties.cashback)}
             </Text>
         </View>
     );

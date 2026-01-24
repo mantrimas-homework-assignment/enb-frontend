@@ -61,19 +61,19 @@ export default function ProductListing(properties: ProductListingProperties) {
 
 const styles = StyleSheet.create({
     container: {
-        width: 300,
-        height: 600,
+        width: '100%',
+        height: '100%',
         borderColor: '#63e3c2',
-        borderWidth: 1,
+        borderWidth: 0.1,
         backgroundColor: '#1f0a4d',
     },
     imageContainer: {
         width: '100%',
-        height: '70%',
+        height: '68%',
         position: 'relative',
     },
     cashbackBoxContainer: {
-        bottom: '15%',
+        bottom: '17%',
     },
     platformBoxContainer: {
         width: '100%',
@@ -83,13 +83,13 @@ const styles = StyleSheet.create({
     contentContainer: {
         height: '30%',
         width: '100%',
-        paddingVertical: 15,
+        paddingVertical: 10,
         paddingHorizontal: 15
     },
     productListingDescriptionContainer: {
-        height: '45%',
+        height: '50%',
     },
     productListingPriceContainer: {
         marginBottom: 10
-    }
+    },
 })

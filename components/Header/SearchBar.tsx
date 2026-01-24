@@ -1,10 +1,11 @@
 import { Image } from 'expo-image';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
+import { SearchContext } from '../../app/_layout';
 import { typography } from '../../constants/typography';
 
 export default function SearchBar() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const { inputValue, setInputValue, onSearchSubmit } = useContext(SearchContext);
 
   return (
     <View style={styles.container}>
@@ -17,8 +18,10 @@ export default function SearchBar() {
         style={[styles.searchInput, { outline: 'none' }]}
         placeholder="Search for games, top-ups and more"
         placeholderTextColor="rgba(255, 255, 255, 0.5)"
-        value={searchQuery}
-        onChangeText={setSearchQuery}
+        value={inputValue}
+        onChangeText={setInputValue}
+        onSubmitEditing={onSearchSubmit}
+        returnKeyType="search"
       />
     </View>
   );

@@ -18,3 +18,8 @@ export function calculateDiscountPercentage(
     const discount = ((price - discountedPrice) / price) * 100;
     return Math.round(discount);
 }
+
+export function formatPriceFromCents(cents: number): string {
+    const dollars = cents / 100;
+    return dollars.toFixed(2);
+}

@@ -34,8 +34,9 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#fff',
         ...typography.semiBold,
-        marginBottom: 11,
+        marginBottom: 7,
         flexShrink: 1,
+        lineHeight: 20
     },
     regionText: {
         color: '#23c299',
